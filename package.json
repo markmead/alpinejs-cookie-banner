@@ -1,0 +1,22 @@
+{
+  "name": "alpinejs-cookie-banner",
+  "version": "1.0.0",
+  "description": "Alpine JS Cookie Banner",
+  "keywords": [
+    "Alpine",
+    "Alpine JS",
+    "Alpine JS Plugins",
+    "Cookie Banner"
+  ],
+  "author": "Mark Mead",
+  "license": "MIT",
+  "main": "dist/cookie.cjs.js",
+  "module": "dist/cookie.esm.js",
+  "unpkg": "dist/cookie.min.js",
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.12.22"
+  }
+}
