@@ -1,7 +1,7 @@
 {
   "name": "alpinejs-cookie-banner",
   "version": "1.0.0",
-  "description": "Alpine JS Cookie Banner",
+  "description": "Alpine JS plugin that adds simple cookie banner functionality",
   "keywords": [
     "Alpine",
     "Alpine JS",

@@ -1,43 +1,22 @@
-# Alpine JS Persist Extended
+# Alpine JS Cookie Banner
 
-Alpine JS magic method `$storage` extends the official `$persist` plugin to help you work with local storage 📦
+Alpine JS directive that adds simple cookie banner functionality.
 
 ## Example 👀
 
 ```html
-<div
-  x-data="{ name: $persist('') }"
-  x-on:storage-delete.window="name = $storage('name')"
->
-  <h2 x-text="name"></h2>
+<div x-data x-cookie-banner>
+  We use cookies <a href="#">click here</a> to find out more.
 
-  <input type="text" x-model="name" />
-
-  <button x-on:click="alert($storage('name'))">Alert Name</button>
-
-  <button x-on:click="$storage('name', 'delete')">Delete Name</button>
+  <button> Got it </button>
 </div>
 ```
 
-### Get
+It works by listening for a click even on a `<button>` element which when clicked will hide the cookie banner.
 
-```js
-$storage("name");
-```
+This is a basic example that uses the default `localStorage` option. If you want to use `sessionStorage` then you'd write `x-cookie-banner.session`
 
-Gets the value from local storage of the provided key. It's not required, but you can pass `'get'` as a second parameter.
-
-### Delete
-
-```js
-$storage("name", "delete");
-```
-
-Delete the data from local storage. This also emits an event that you can listen for in Alpine JS.
-
-```html
-<div x-on:storage-delete.window="name = $storage('name')"></div>
-```
+You can pass any HTML you want, but make sure you do pass a `<button>` or there's no way for the user to close the cookie banner.
 
 ## Install 🌟
 
@@ -48,7 +27,7 @@ It's very easy to install Alpine JS plugins! 🙌
 ```html
 <script
   defer
-  src="https://unpkg.com/alpinejs-persist-extended@latest/dist/storage.min.js"
+  src="https://unpkg.com/alpinejs-cookie-banner@latest/dist/cookie.min.js"
 ></script>
 
 <script
@@ -62,18 +41,18 @@ It's very easy to install Alpine JS plugins! 🙌
 ### NPM/Yarn
 
 ```shell
-npm i -D alpinejs-persist-extended
+npm i -D alpinejs-cookie-banner
 
-yarn add -D alpinejs-persist-extended
+yarn add -D alpinejs-cookie-banner
 ```
 
 Then you can register the plugin.
 
 ```js
-import Alpine from "alpinejs";
-import storage from "alpinejs-persist-extended";
+import Alpine from 'alpinejs';
+import cookie from 'alpinejs-cookie-banner';
 
-Alpine.plugin(storage);
+Alpine.plugin(cookie);
 
 window.Alpine = Alpine;
 
@@ -84,7 +63,7 @@ Alpine.start();
 
 Here's some stats about the Alpine JS Persist Extended package! As you can see, it's tiny 🤏
 
-![](https://img.shields.io/bundlephobia/min/alpinejs-persist-extended)
-![](https://img.shields.io/npm/v/alpinejs-persist-extended)
-![](https://img.shields.io/npm/dt/alpinejs-persist-extended)
-![](https://img.shields.io/github/license/markmead/alpinejs-persist-extended)
+![](https://img.shields.io/bundlephobia/min/alpinejs-cookie-banner)
+![](https://img.shields.io/npm/v/alpinejs-cookie-banner)
+![](https://img.shields.io/npm/dt/alpinejs-cookie-banner)
+![](https://img.shields.io/github/license/markmead/alpinejs-cookie-banner)

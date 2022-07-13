@@ -1,5 +1,5 @@
 export default function (Alpine) {
-  Alpine.directive('cookie', (el, { modifiers }, {}) => {
+  Alpine.directive('cookie-banner', (el, { modifiers }, {}) => {
     let useSessionStorage = modifiers[0] === 'session';
 
     let closeButtonClicked = useSessionStorage
